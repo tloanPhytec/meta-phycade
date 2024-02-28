@@ -1,0 +1,12 @@
+[Unit]
+Description= PHYcade Volume Service
+After=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/phycade-volume.sh
+RemainAfterExit=no
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
