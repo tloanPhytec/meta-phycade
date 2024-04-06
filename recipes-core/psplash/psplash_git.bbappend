@@ -11,3 +11,4 @@ do_configure:prepend() {
     cp ${WORKDIR}/*.png ${S}/base-images
 }
 
+EXTRA_OECONF += "--disable-startup-msg --enable-img-fullscreen --disable-progress-bar"
