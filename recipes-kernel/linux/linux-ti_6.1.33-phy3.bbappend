@@ -6,5 +6,6 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += " \
 	file://arcade.cfg \
-	file://phycade_F4-button_linux-ti_pd23.2.0.patch \
+	file://0001-phycade_F4-button_linux-ti_pd23.2.0.patch \
+	file://0002-phycade_volume-buttons_linux-ti_pd23.2.0.patch \
 "

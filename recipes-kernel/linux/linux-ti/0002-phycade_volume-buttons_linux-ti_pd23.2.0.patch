@@ -1,0 +1,39 @@
+diff --git a/arch/arm64/boot/dts/ti/k3-am625-phyboard-lyra-rdk.dts b/arch/arm64/boot/dts/ti/k3-am625-phyboard-lyra-rdk.dts
+index 5a50111de6be..7c13de1d1f45 100644
+--- a/arch/arm64/boot/dts/ti/k3-am625-phyboard-lyra-rdk.dts
++++ b/arch/arm64/boot/dts/ti/k3-am625-phyboard-lyra-rdk.dts
+@@ -41,12 +41,24 @@ keys {
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&gpio_keys_pins_default>;
+ 
+-		key-home {
++		key-play {
+ 			label = "F4";
+ 			linux,code = <KEY_F4>;
+ 			gpios = <&mcu_gpio0 23 GPIO_ACTIVE_LOW>;
+ 		};
+ 
++		key-minus {
++			label = "volume-";
++			linux,code = <KEY_KPMINUS>;
++			gpios = <&mcu_gpio0 8 GPIO_ACTIVE_LOW>;
++		};
++
++		key-plus {
++			label = "volume+";
++			linux,code = <KEY_KPPLUS>;
++			gpios = <&mcu_gpio0 7 GPIO_ACTIVE_LOW>;
++		};
++
+ 		key-menu {
+ 			label = "menu";
+ 			linux,code = <KEY_MENU>;
+@@ -275,6 +287,8 @@ &mcu_pmx0 {
+         gpio_keys_pins_default: gpio-keys-pins-default {
+                 pinctrl-single,pins = <
+                         AM62X_IOPAD(0x084, PIN_INPUT, 7) /* WKUP_CLKOUT0.MCU_GPIO0_23 */
++                        AM62X_IOPAD(0x020, PIN_INPUT, 7) /* MCU_UART0_RTSn.MCU_GPIO0_8 */
++                        AM62X_IOPAD(0x01c, PIN_INPUT, 7) /* MCU_UART0_CTSn.MCU_GPIO0_7 */
+                 >;
+         };
+ };
